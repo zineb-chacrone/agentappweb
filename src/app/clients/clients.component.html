@@ -2,40 +2,51 @@
         <h1>Clients</h1>
         <hr>
         <h4>
-            {{todayDate | date:'short'}} 
+            {{todayDate | date:'short'}}
         </h4>
-    
+
         <div id="rolling_bar">
             <input type="text" id="txt" placeholder="CIN " [(ngModel)]="cin">
             <a id="btn">
-                <i class="fas fa-search" (click)="goprofile()"></i>
+                <i class="fas fa-search" ></i>
             </a>
         </div>
-       
+
         <button mat-button (click)="onadd()" class="btn" >
             <i class="fas fa-plus"></i>Ajouter un client</button>
-        
+
         <table id="customer">
-            
+
             <tr>
                 <th *ngFor = "let column of headers">
                     {{column}}
-        
+
                 </th>
             </tr>
-        
-            <tr *ngFor = "let row of rows">
-                <td *ngFor = "let column of headers">
-                  {{row[column]}}
-        
-                </td>
 
-                
-                
+            <tr *ngFor = "let row of rows._embedded.clients">
+                <td>
+{{row.cin}}
+                </td>
+              <td>
+                {{row.nom}}
+              </td>
+              <td>
+                {{row.prenom}}
+              </td>
+              <td>
+                {{row.email}}
+              </td>
+              <td>
+                {{row.phone}}
+              </td>
+
+
+
             </tr>
-            
+
         </table>
-        
-        
-        
+
+
+
         </div>

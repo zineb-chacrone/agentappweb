@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
   onSubmit(){
 console.log(this.f.username.value);
     console.log(this.f.password.value);
-        this.authentificationService.authenticationService(this.f.username.value, this.f.password.value).subscribe((result)=> {
+        this.authentificationService.authenticate(this.f.username.value, this.f.password.value).subscribe((result)=> {
           this.invalidLogin = false;
           this.loginSuccess = true;
 console.log(result);

@@ -21,7 +21,7 @@ export class ModifierComponent implements OnInit {
   cin: [],
   datedajout: [],
   numtel: [],
-     
+
 
 });
   }
@@ -29,14 +29,8 @@ export class ModifierComponent implements OnInit {
     console.log('Données de formulaire ...',this.signupForm.value);
   }
   updateclient(){
-     this.comptData.setname(JSON.stringify(this.signupForm.get('Nom').value));
-  this.comptData.setemail(JSON.stringify(this.signupForm.get('email').value));
 
-  //this.cAjout.setdatenassance(JSON.stringify(this.signupForm.get(' datenaissance').value));
-  this.comptData.setcin(JSON.stringify(this.signupForm.get('cin').value));
 
-  this.comptData.settel(JSON.stringify(this.signupForm.get('numtel').value));
- 
   }
 
 }
@@ -47,7 +41,7 @@ Modifi(){
 }
 
 downloadpdf(){
- 
+
 }
 
 */

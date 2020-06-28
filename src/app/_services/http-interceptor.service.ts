@@ -7,19 +7,20 @@ import {AuthenticationService} from "./authentification.service";
 @Injectable()
 export class HttpInterceptorService implements HttpInterceptor {
 
-    constructor(private authenticationService: AuthenticationService) { }
+  constructor() {}
 
-    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        if (this.authenticationService.isUserLoggedIn() && req.url.indexOf('log') === -1) {
-            const authReq = req.clone({
-                headers: new HttpHeaders({
-                    'Content-Type': 'application/json',
-                    'Authorization': `Basic ${window.btoa(this.authenticationService.username + ":" + this.authenticationService.password)}`
-                })
-            });
-            return next.handle(authReq);
-        } else {
-            return next.handle(req);
-        }
+  intercept(req: HttpRequest<any>, next: HttpHandler) {
+    if (
+      sessionStorage.getItem('username') &&
+      sessionStorage.getItem('basicauth')
+    ) {
+      req = req.clone({
+        setHeaders: {
+          Authorization: sessionStorage.getItem('basicauth'),
+        },
+      });
     }
+
+    return next.handle(req);
+  }
 }

@@ -28,14 +28,10 @@ export class ConsulterComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.Nom =this.cAjout.getname();
-  this.cin=this.cAjout.getcin();
-  this.numtel=this.cAjout.gettel();
-  this.email=this.cAjout.getemail();
-  this.numcompte=this.cAjout.getcmpte();
+
   }
 
-  
+
 
 
   afficher(){
@@ -50,5 +46,5 @@ export class ConsulterComponent implements OnInit {
   modifier(){
     this.dialog.open(ModifierComponent);
   }
-    
+
 }

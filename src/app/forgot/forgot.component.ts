@@ -47,7 +47,7 @@ export class ForgotComponent implements OnInit {
       }
 
       this.loading = true;
-      this.authentificationService.authenticationService( this.f.username.value, this.f.password.value)
+      this.authentificationService.authenticate( this.f.username.value, this.f.password.value)
            .pipe(first())
            .subscribe(
              data => {

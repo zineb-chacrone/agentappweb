@@ -36,7 +36,7 @@ username:string;
 
 
   handleLogout(){
-    this.authen.logout();
+    this.authen.logOut();
   }
 
 
