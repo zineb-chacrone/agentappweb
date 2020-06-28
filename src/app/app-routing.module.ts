@@ -34,7 +34,8 @@ const routes: Routes = [
       children:[
         {path:'logout',redirectTo:'/login',pathMatch:'full'},
         {path:'email',component:EmailComponent},
-        {path:'client',component:ClientsComponent},
+        {path:'client',component:ClientsComponent
+        },
         {path:'operation',component:OperationComponent},
         {path:'compte',component:ComptesComponent},
         {path:'contact',component:ContactComponent},

@@ -1,10 +1,10 @@
 <div class="comptes">
         <h1> Comptes</h1>
-       
-       
+
+
         <hr>
         <h4>
-            {{todayDate | date:'short'}} 
+            {{todayDate | date:'short'}}
         </h4>
         <div id="rolling_bar">
             <input type="text" id="txt" placeholder="N° du Compte">
@@ -16,18 +16,26 @@
             <tr>
                 <th *ngFor = "let column of headers">
                     {{column}}
-        
+
                 </th>
             </tr>
-        
-            <tr *ngFor = "let row of rows">
-                <td *ngFor = "let column of headers">
-                  {{row[column]}}
-        
+
+            <tr *ngFor = "let row of rows._embedded.comptes">
+                <td >
+                  {{row.id}}
+
                 </td>
-               
+              <td >
+                {{row.type}}
+
+              </td>
+              <td >
+                {{row.solde}}
+
+              </td>
+
             </tr>
-           
+
         </table>
-        
+
         </div>

@@ -1,30 +1,41 @@
 <div class="comptes">
-    <button mat-button type="submit" [mat-dialog-close]="true" class="close">
-        <i class="fas fa-times"></i>
-    </button> 
-    <br/>
-    <br/>   
-    <hr>
-    
-    <table id="cpts">
-        <tr>
-            <th *ngFor = "let column of headers">
-                {{column}}
-    
-            </th>
-        </tr>
-    
-        <tr *ngFor = "let row of rows">
-            <td *ngFor = "let column of headers">
-              {{row[column]}}
-    
-            </td>
-           
-        </tr>
+  <h1>Mes Comptes</h1>
 
-        <button mat-button  class="btn1" (click)="ajouter()">
-            Ajouter un compte</button>
-       
-    </table>
-    
-    </div>
+
+  <hr>
+  <h4>
+
+  </h4>
+  <div id="rolling_bar">
+    <input type="text" id="txt" placeholder="N° du Compte">
+    <a  id="btn" (click)="gotoacount()">
+      <i class="fas fa-search"></i>
+    </a>
+  </div>
+  <table id="cpts">
+    <tr>
+      <th *ngFor = "let column of headers">
+        {{column}}
+
+      </th>
+    </tr>
+
+    <tr *ngFor = "let row of rows._embedded.comptes">
+      <td >
+        {{row.id}}
+
+      </td>
+      <td >
+        {{row.type}}
+
+      </td>
+      <td >
+        {{row.solde}}
+
+      </td>
+
+    </tr>
+
+  </table>
+
+</div>

@@ -40,8 +40,17 @@
               <td>
                 {{row.phone}}
               </td>
+              <td>
+<button (click)="onCreateCompte(row.id)"
+><i class="fas fa-plus"></i></button>
 
-
+              </td>
+              <td>
+                <button (click)="onDeleteClient(row.id)"
+                ><i class="fas fa-trash"></i></button>
+                <button (click)="onShowClient(row.id)"
+                ><i class="fas fa-search"></i>Consulter Profile</button>
+              </td>
 
             </tr>
 

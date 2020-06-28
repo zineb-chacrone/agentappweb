@@ -23,7 +23,7 @@ export class ClientsComponent implements OnInit {
 
   durationInSeconds = 5;
 
-  headers = ["CIN", "Nom de client","Prénom","Email","Téléphone",];
+  headers = ["CIN", "Nom de client","Prénom","Email","Téléphone","Ajouter Compte","Supprimer/Modifier"];
   constructor(private router: Router, private dialog: MatDialog, private cAjout: ClientdataService,private _snackBar: MatSnackBar ) {
    }
   ngOnInit(): void {
@@ -48,7 +48,25 @@ this.cAjout.getAllClient()
   }
 
 
+  onCreateCompte(id: any) {
+this.cAjout.clientId=id;
+this.router.navigateByUrl("/agent/account")
+  }
 
+  onDeleteClient(id: any) {
+    this.cAjout.deleteClient(id)
+      .subscribe(data=>{
+        console.log(data)
+        window.location.reload()
+      })
+  }
 
-
+  onShowClient(id: any) {
+this.cAjout.getClient(id)
+  .subscribe(data=>{
+    console.log(data)
+    this.cAjout.client=data;
+    this.router.navigateByUrl("/agent/consulter")
+  })
+  }
 }
