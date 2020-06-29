@@ -1,10 +1,12 @@
+
+
 .box{
   width: 700px;
   height: 600px;
   position: absolute;
   background-color: white;
   transform: translate(-50%,-50%);
-  padding: 20px 20px;
+  padding: 20px 10px;
   border:5px solid goldenrod;
 }
 
@@ -17,19 +19,19 @@
    width: 55%;
    height: 20px;
    margin-top: 20px;
-   margin-left: 100px;
+   margin-left: 130px;
 }
 
-.form-group i{
-  color: goldenrod;
-  font-size: 20px;
-  margin-left: 10px;
+h2 {
+  text-align: center;
+  color: black;
+  margin-top: 20px;
 }
 
 .box button{
   padding: 10px;
   width: 20%;
-  margin-top: 100px;
+  margin-top: 110px;
   margin-right: 20px;
   background-color: white;
   color: goldenrod;

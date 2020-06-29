@@ -12,9 +12,11 @@ import {ClientdataService} from "../clientdata.service";
 })
 export class MescomptesComponent implements OnInit {
 
+  compte:any;
   rows :any;
   clientId;
-  headers = [ "N° du compte","Type","Solde"];
+  numCompte:number;
+  headers = [ "Numéro","Type","Solde"];
   constructor(private route:Router,private ccAjout:ClientdataService,
     private dialog:MatDialog) { }
 
@@ -33,7 +35,19 @@ export class MescomptesComponent implements OnInit {
     this.dialog.open(AccountComponent);
   }
 
-  gotoacount() {
-
+  onDeleteCompte(id: any) {
+    this.ccAjout.deleteCompte(id)
+      .subscribe(data=>{
+        console.log(data)
+        window.location.reload()
+      })
   }
+  
+/*
+  updateCompte(id_compte){
+    this.clientId=sessionStorage.getItem('id');
+    this.ccAjout.modifyCompte(id_compte,this.clientId,this.compte).subscribe(data => {
+      this.compte=data;
+    })
+  }*/
 }

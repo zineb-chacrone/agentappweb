@@ -33,6 +33,11 @@ clientId;
     return this.http.post("http://localhost:8085/agent/"+id+"/AjouterCompte",compte);
   }
 
+  public deleteCompte(id){
+    return this.http.delete("http://localhost:8085/comptes/"+id);
+
+  }
+  
   public deleteClient(id){
     return this.http.delete("http://localhost:8085/clients/"+id);
 

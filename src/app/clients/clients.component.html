@@ -1,61 +1,62 @@
 <div class="client">
-        <h1>Clients</h1>
-        <hr>
-        <h4>
-            {{todayDate | date:'short'}}
-        </h4>
+  <h1>Clients</h1>
+  <hr>
+  <h4>
+      {{todayDate | date:'short'}}
+  </h4>
 
-        <div id="rolling_bar">
-            <input type="text" id="txt" placeholder="CIN " [(ngModel)]="cin">
-            <a id="btn">
-                <i class="fas fa-search" ></i>
-            </a>
-        </div>
+  <div id="rolling_bar">
+      <input type="text" id="txt" placeholder="CIN " [(ngModel)]="cin">
+      <a id="btn">
+          <i class="fas fa-search" ></i>
+      </a>
+  </div>
 
-        <button mat-button (click)="onadd()" class="btn" >
-            <i class="fas fa-plus"></i>Ajouter un client</button>
+  <button mat-button (click)="onadd()" class="btn" >
+      <i class="fas fa-plus"></i>Ajouter un client</button>
 
-        <table id="customer">
+  <table id="customer">
 
-            <tr>
-                <th *ngFor = "let column of headers">
-                    {{column}}
+      <tr>
+          <th *ngFor = "let column of headers">
+              {{column}}
 
-                </th>
-            </tr>
+          </th>
+      </tr>
 
-            <tr *ngFor = "let row of rows._embedded.clients">
-                <td>
+      <tr *ngFor = "let row of rows._embedded.clients">
+          <td>
 {{row.cin}}
-                </td>
-              <td>
-                {{row.nom}}
-              </td>
-              <td>
-                {{row.prenom}}
-              </td>
-              <td>
-                {{row.email}}
-              </td>
-              <td>
-                {{row.phone}}
-              </td>
-              <td>
-<button (click)="onCreateCompte(row.id)"
-><i class="fas fa-plus"></i></button>
+          </td>
+        <td>
+          {{row.nom}}
+        </td>
+        <td>
+          {{row.prenom}}
+        </td>
+        <td>
+          {{row.email}}
+        </td>
+        <td>
+          {{row.phone}}
+        </td>
+        <td>
+<button mat-raised-button (click)="onCreateCompte(row.id)" class="bt1"><i class="fas fa-plus"></i></button>
 
-              </td>
-              <td>
-                <button (click)="onDeleteClient(row.id)"
-                ><i class="fas fa-trash"></i></button>
-                <button (click)="onShowClient(row.id)"
-                ><i class="fas fa-search"></i>Consulter Profile</button>
-              </td>
+        </td>
+        <td>
+          <button mat-raised-button (click)="onDeleteClient(row.id)" class="btn1"><i class="fas fa-trash"></i></button>
+          
+        </td>
+        <td>
+          
+          <button mat-raised-button (click)="onShowClient(row.id)" class="btn1"><i class="fas fa-search"></i> Profile</button>
+        </td>
 
-            </tr>
+      </tr>
 
-        </table>
+  </table>
 
 
 
-        </div>
+  </div>

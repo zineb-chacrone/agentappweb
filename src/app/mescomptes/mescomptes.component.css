@@ -19,10 +19,16 @@
     color: goldenrod;
     font-size: 125%;
     margin-top: 10px;
-    background-color: gainsboro;
+    margin-left: 90%;
     
 }
 
+.btn{
+    margin-left:20px;
+    color: goldenrod;
+    font-size: 125%;
+   
+}
 
 #cpts td, #cpts th{
     border: 1px solid #ddd;

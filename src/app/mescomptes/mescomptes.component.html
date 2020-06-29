@@ -1,4 +1,6 @@
 <div class="comptes">
+
+  <button mat-raised-button class="btn1"  [mat-dialog-close]="true" type="submit" >Fermer</button>
   <h1>Mes Comptes</h1>
 
 
@@ -6,12 +8,7 @@
   <h4>
 
   </h4>
-  <div id="rolling_bar">
-    <input type="text" id="txt" placeholder="N° du Compte">
-    <a  id="btn" (click)="gotoacount()">
-      <i class="fas fa-search"></i>
-    </a>
-  </div>
+  
   <table id="cpts">
     <tr>
       <th *ngFor = "let column of headers">
@@ -33,7 +30,11 @@
         {{row.solde}}
 
       </td>
-
+      <td>
+        <button mat-raised-button (click)="onDeleteCompte(row.id)" class="btn"><i class="fas fa-trash"></i></button>
+        
+      </td>
+     
     </tr>
 
   </table>
