@@ -2,10 +2,10 @@
 
   <mat-toolbar>
     <span class="logo"><i class="fas fa-coins"></i>EMBank</span>
-  <div class="spacer">
-    <button mat-button  (click)="email()" class="icon"><i class="fas fa-bell"></i></button>
-    <a mat-button  href="/logout" (click)=handleLogout() class="icon1" ><i class="fas fa-power-off"></i></a>
-</div>
+    <div class="spacer">
+      <a mat-raised-button  (click)="email()" class="icon"><i class="fas fa-bell"></i></a>
+      <a mat-raised-button  href="/logout" (click)=handleLogout() class="icon1" ><i class="fas fa-power-off"></i></a>
+  </div>
 </mat-toolbar>
 
 
@@ -23,7 +23,7 @@
   </div><br />
 
 
-  <span>{{username}}</span>
+  <span> <h2>{{username}}</h2></span>
   <div  class="sidenav">
 
       <a mat-list-item  href="agent/compte" class="itm">

@@ -21,7 +21,7 @@ username:string;
 
   ngOnInit(): void {
     this.position=this.router.url;
-
+    this.username=sessionStorage.getItem('username');
   }
   /*
   gotoform(){

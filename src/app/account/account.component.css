@@ -1,6 +1,10 @@
 .box{
     height: 370px;
-    width: 400px;
+    width: 500px;
+    margin-left: 10%;
+    margin-top: 5%;
+    border: 2px solid gold;
+    padding: 10px 10px;
 }
 
 .btn{
@@ -8,7 +12,7 @@
     width: 40%;
     height: 10%;
     margin-top: 130px;
-    float: right;
+    margin-left: 40px;
 }
 
 .form-group{
@@ -18,9 +22,10 @@
 }
 
 #type-select{
-    width: 50%;
+    width: 60%;
     height: 15%;
     padding: 10px;
+    margin-left: 30px;
     border: 2px solid ;
 }
 
@@ -30,7 +35,7 @@
 }
 
 .form-group input{
-    width: 50%;
+    width: 55%;
     height: 10%;
     padding: 10px;
     border: 2px solid ;
